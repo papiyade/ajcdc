@@ -7,13 +7,15 @@ import { ToastContainer } from '../UI/Toast';
 export function Layout() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Sidebar */}
+      {/* Sidebar (gère elle-même le positionnement fixe) */}
       <Sidebar />
       
-      {/* Main content */}
+      {/* Main content avec marge pour la sidebar */}
       <div className="lg:pl-64">
-        {/* Header */}
-        <Header />
+        {/* Header fixé */}
+        <div className="sticky top-0 z-40 bg-white shadow-sm">
+          <Header />
+        </div>
         
         {/* Page content */}
         <main className="flex-1">
@@ -28,4 +30,3 @@ export function Layout() {
     </div>
   );
 }
-
